@@ -1,0 +1,7 @@
+{
+  "name": "ionicLoginApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
