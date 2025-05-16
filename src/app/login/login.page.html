@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <div class="login-container">
+    
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div class="validation-error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <span *ngIf="loginForm.get('email')?.errors?.['required']">Email é obrigatório</span>
+        <span *ngIf="loginForm.get('email')?.errors?.['email']">Email inválido</span>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <div class="validation-error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        <span *ngIf="loginForm.get('password')?.errors?.['required']">Senha é obrigatória</span>
+      </div>
+
+      <ion-button expand="block" type="submit" [disabled]="loginForm.invalid || isLoading">
+        <ion-spinner name="dots" *ngIf="isLoading"></ion-spinner>
+        <span *ngIf="!isLoading">Entrar</span>
+      </ion-button>
+    </form>
+
+    <ion-button expand="block" fill="clear" (click)="goToRegister()">
+      Ainda não tem conta? Cadastre-se
+    </ion-button>
+  </div>
+</ion-content>

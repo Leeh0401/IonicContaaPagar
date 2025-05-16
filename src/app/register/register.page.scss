@@ -1,0 +1,76 @@
+:host {
+    --ion-background-color: #f5e9ff;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    height: 100%;
+  }
+  
+  ion-toolbar {
+    --background: #e6d6f8; /* Lilás claro no topo */
+    --color: #7c3aed;
+    box-shadow: 0 2px 6px rgba(124, 58, 237, 0.2);
+  }
+  
+  ion-title {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #7c3aed;
+    text-align: center;
+  }
+  
+  ion-item {
+    --background: #fff;
+    --border-radius: 12px;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(190, 145, 255, 0.2);
+  }
+  
+  ion-label {
+    color: #9c5fe0;
+    font-weight: 500;
+  }
+  
+  ion-input {
+    color: #5a359d;
+    font-weight: 500;
+  }
+  
+  .validation-error {
+    color: #d63384;
+    font-size: 13px;
+    margin: 4px 0 12px 12px;
+    align-self: flex-start;
+  }
+  
+  ion-button {
+    --background: #e3c7ff;
+    --background-hover: #d4b2f2;
+    --border-radius: 20px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    --color: #5a359d;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    margin-top: 16px;
+    box-shadow: 0 2px 8px rgba(190, 145, 255, 0.3);
+  }
+  
+  ion-button[fill="clear"] {
+    --color: #5a359d;
+    --background: #e3c7ff;
+    --background-hover: #d4b2f2;
+    box-shadow: 0 2px 8px rgba(190, 145, 255, 0.3);
+    margin-top: 8px;
+  }
+  

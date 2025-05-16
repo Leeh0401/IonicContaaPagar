@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contas a Pagar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <h1 class="ion-text-center">Olá!</h1>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Resumo Financeiro</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text color="primary">
+              <h2>Total: R$ {{resumoFinanceiro.total | number:'1.2-2'}}</h2>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text color="success">
+              Pagas: R$ {{resumoFinanceiro.pagas | number:'1.2-2'}}
+            </ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text color="warning">
+              Pendentes: R$ {{resumoFinanceiro.pendentes | number:'1.2-2'}}
+            </ion-text>
+          </ion-col>
+          <ion-col>
+            <ion-text color="danger">
+              Atrasadas: R$ {{resumoFinanceiro.atrasadas | number:'1.2-2'}}
+            </ion-text>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nova Conta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="contaForm" (ngSubmit)="adicionarConta()">
+     
+        <ion-item>
+          <ion-label position="floating">Descrição</ion-label>
+          <ion-input formControlName="descricao" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Valor</ion-label>
+          <ion-input formControlName="valor" type="number" step="0.01"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Data de Vencimento</ion-label>
+          <ion-input formControlName="dataVencimento" type="date"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Categoria</ion-label>
+          <ion-input formControlName="categoria" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Observações</ion-label>
+          <ion-textarea formControlName="observacoes"></ion-textarea>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" [disabled]="!contaForm.valid" class="ion-margin-top">
+          Adicionar Conta
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
