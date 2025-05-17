@@ -1,6 +1,6 @@
 export interface Conta {
   id: string;
-  userId: string;  // ID do usuário que criou a conta
+  userId: string;  
   descricao: string;
   valor: number;
   dataVencimento: Date;
